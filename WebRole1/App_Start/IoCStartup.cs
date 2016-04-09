@@ -12,7 +12,6 @@
 
             // 2. Configure the container (register)
             //container.Register<IPoolPriceDS, PoolPriceDS>(Lifestyle.Transient);            
-
             // 3. Optionally verify the container's configuration.
             container.Verify();
 
