@@ -1,5 +1,6 @@
 ﻿namespace WebRole1.Controllers
 {
+    using Microsoft.WindowsAzure.ServiceRuntime;
     using NLog;
     using System.Web.Mvc;
 
@@ -9,7 +10,7 @@
         public ActionResult Index()
         {
             var logger = LogManager.GetCurrentClassLogger();
-            var theEvent = new LogEventInfo(LogLevel.Trace, "TestAppLogger", "test log");
+            var theEvent = new LogEventInfo(LogLevel.Trace, RoleEnvironment.CurrentRoleInstance.Id, "test log");
             logger.Log(theEvent);
 
             return View();
