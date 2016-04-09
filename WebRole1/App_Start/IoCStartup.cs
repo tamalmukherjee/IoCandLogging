@@ -11,7 +11,7 @@
             var container = new Container();
 
             // 2. Configure the container (register)
-            //container.Register<IPoolPriceDS, PoolPriceDS>(Lifestyle.Transient);            
+            //container.Register<IPoolPriceDS, PoolPriceDS>(Lifestyle.Transient);
             // 3. Optionally verify the container's configuration.
             container.Verify();
 

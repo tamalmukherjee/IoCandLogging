@@ -23,7 +23,7 @@ namespace NLog.Extensions.AzureTableStorage
 
         public bool IsValid()
         {
-            return !_reservedWords.Contains(_tableName) 
+            return !_reservedWords.Contains(_tableName)
                 && Regex.IsMatch(_tableName, RegularExpression);
         }
     }

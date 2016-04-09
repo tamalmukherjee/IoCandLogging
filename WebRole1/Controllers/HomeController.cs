@@ -8,8 +8,9 @@
         // GET: Home
         public ActionResult Index()
         {
-            Logger logger = LogManager.GetCurrentClassLogger();
-            logger.Warn("test warning");
+            var logger = LogManager.GetCurrentClassLogger();
+            var theEvent = new LogEventInfo(LogLevel.Trace, "TestAppLogger", "test log");
+            logger.Log(theEvent);
 
             return View();
         }

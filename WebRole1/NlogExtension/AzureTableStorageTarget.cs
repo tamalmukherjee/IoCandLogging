@@ -1,6 +1,6 @@
-﻿using System;
+﻿using NLog.Targets;
+using System;
 using System.ComponentModel.DataAnnotations;
-using NLog.Targets;
 
 namespace NLog.Extensions.AzureTableStorage
 {
@@ -32,7 +32,7 @@ namespace NLog.Extensions.AzureTableStorage
             // use PartitionKeyPrefixKey if present
             if (!string.IsNullOrWhiteSpace(PartitionKeyPrefixKey))
             {
-                PartitionKeyPrefix = _configManager.GetSettingByKey(PartitionKeyPrefixKey);
+                PartitionKeyPrefix = ConfigManager.GetSettingByKey(PartitionKeyPrefixKey);
             }
             // else use PartitionKeyPrefixDateFormat if available
             else if (!string.IsNullOrWhiteSpace(PartitionKeyPrefixDateFormat))
@@ -46,7 +46,7 @@ namespace NLog.Extensions.AzureTableStorage
             IsNameValidForTableStorage(TableName);
         }
 
-        private void IsNameValidForTableStorage(string tableName)
+        private static void IsNameValidForTableStorage(string tableName)
         {
             var validator = new AzureStorageTableNameValidator(tableName);
             if (!validator.IsValid())

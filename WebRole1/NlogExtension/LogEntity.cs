@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Microsoft.WindowsAzure.Storage.Table;
+using System;
 using System.Collections;
 using System.Text;
-using Microsoft.WindowsAzure.Storage.Table;
 
 namespace NLog.Extensions.AzureTableStorage
 {
@@ -34,13 +34,12 @@ namespace NLog.Extensions.AzureTableStorage
                 {
                     StackTrace = logEvent.StackTrace.ToString();
                 }
-                RowKey = String.Format("{0}__{1}", (DateTime.MaxValue.Ticks - DateTime.UtcNow.Ticks).ToString("d19"), Guid.NewGuid());
+                RowKey = string.Format("{0}__{1}", (DateTime.MaxValue.Ticks - DateTime.UtcNow.Ticks).ToString("d19"), Guid.NewGuid());
                 PartitionKey = !string.IsNullOrWhiteSpace(partitionKeyPrefix)
                                 ? partitionKeyPrefix + "." + LoggerName
                                 : LoggerName;
                 MachineName = Environment.MachineName;
             }
-
         }
 
         private static string GetExceptionDataAsString(Exception exception)

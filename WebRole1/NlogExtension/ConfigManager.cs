@@ -34,10 +34,10 @@ namespace NLog.Extensions.AzureTableStorage
             return CloudStorageAccount.Parse(connectionString);
         }
 
-        public string GetSettingByKey(string key)
+        public static string GetSettingByKey(string key)
         {
             //try get string from app settings or cloud service config
-           return CloudConfigurationManager.GetSetting(key);
+            return CloudConfigurationManager.GetSetting(key);
         }
     }
 }
