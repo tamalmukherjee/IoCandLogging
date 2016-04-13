@@ -10,7 +10,8 @@
         public ActionResult Index()
         {
             var logger = LogManager.GetCurrentClassLogger();
-            var theEvent = new LogEventInfo(LogLevel.Trace, RoleEnvironment.CurrentRoleInstance.Id, "test log");
+            var theEvent = new LogEventInfo(LogLevel.Trace, RoleEnvironment.DeploymentId, "test log");
+            //theEvent.Properties["subdomain"] = "testdomain";
             logger.Log(theEvent);
 
             return View();

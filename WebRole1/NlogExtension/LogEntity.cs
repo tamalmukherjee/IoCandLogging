@@ -39,6 +39,7 @@ namespace NLog.Extensions.AzureTableStorage
                                 ? partitionKeyPrefix + "." + LoggerName
                                 : LoggerName;
                 MachineName = Environment.MachineName;
+                Subdomain = logEvent.Properties.ContainsKey("subdomain") ? Convert.ToString(logEvent.Properties["subdomain"]) : string.Empty;
             }
         }
 
@@ -66,5 +67,6 @@ namespace NLog.Extensions.AzureTableStorage
         public string MessageWithLayout { get; set; }
         public string ExceptionData { get; set; }
         public string MachineName { get; set; }
+        public string Subdomain { get; set; }
     }
 }
