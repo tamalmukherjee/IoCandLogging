@@ -6,6 +6,13 @@
 
     public class HomeController : Controller
     {
+        ILogger _logger;
+
+        public HomeController(ILogger logger)
+        {
+            this._logger = logger;
+        }
+
         // GET: Home
         public ActionResult Index()
         {
