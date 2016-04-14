@@ -20,5 +20,12 @@
 
             return View();
         }
+
+        [Route("just-a-test-page/{name?}")]
+        public ActionResult TestPage(string name)
+        {
+            ViewBag.Name = name;
+            return View();
+        }
     }
 }
