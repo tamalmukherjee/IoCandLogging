@@ -154,13 +154,6 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="NLog.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
-    </Content>
-    <None Include="NLog.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -174,13 +167,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="NlogExtension\AzureStorageTableNameValidator.cs" />
-    <Compile Include="NlogExtension\AzureTableStorageTarget.cs" />
-    <Compile Include="NlogExtension\ConfigManager.cs" />
-    <Compile Include="NlogExtension\ILogger.cs" />
-    <Compile Include="NlogExtension\LogEntity.cs" />
-    <Compile Include="NlogExtension\NLogger.cs" />
-    <Compile Include="NlogExtension\TableStorageManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebRole.cs" />
   </ItemGroup>
@@ -205,6 +191,12 @@
     <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Logging\Logging.csproj">
+      <Project>{a6145aa8-da18-43c5-a8af-5f9ae5ed01cb}</Project>
+      <Name>Logging</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
