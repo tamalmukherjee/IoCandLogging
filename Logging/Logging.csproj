@@ -75,12 +75,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ILogger.cs" />
-    <Compile Include="NLog.Extensions.AzureTableStorage\AzureStorageTableNameValidator.cs" />
-    <Compile Include="NLog.Extensions.AzureTableStorage\AzureTableStorageTarget.cs" />
-    <Compile Include="NLog.Extensions.AzureTableStorage\ConfigManager.cs" />
-    <Compile Include="NLog.Extensions.AzureTableStorage\LogEntity.cs" />
-    <Compile Include="NLog.Extensions.AzureTableStorage\TableStorageManager.cs" />
-    <Compile Include="NLogger.cs" />
+    <Compile Include="NLog\Extensions\AzureTableStorage\AzureStorageTableNameValidator.cs" />
+    <Compile Include="NLog\Extensions\AzureTableStorage\AzureTableStorageTarget.cs" />
+    <Compile Include="NLog\Extensions\AzureTableStorage\ConfigManager.cs" />
+    <Compile Include="NLog\Extensions\AzureTableStorage\LogEntity.cs" />
+    <Compile Include="NLog\Extensions\AzureTableStorage\TableStorageManager.cs" />
+    <Compile Include="NLog\NLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -93,6 +93,7 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

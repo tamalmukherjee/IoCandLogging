@@ -194,7 +194,7 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Logging\Logging.csproj">
+    <ProjectReference Include="..\Logging\Logging.csproj">
       <Project>{a6145aa8-da18-43c5-a8af-5f9ae5ed01cb}</Project>
       <Name>Logging</Name>
     </ProjectReference>

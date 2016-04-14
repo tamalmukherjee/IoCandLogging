@@ -8,6 +8,7 @@ namespace WebRole1.App_Start
     using SimpleInjector.Integration.Web;
     using SimpleInjector.Integration.Web.Mvc;
     using Logging;
+    using Logging.NLog;
     public static class SimpleInjectorInitializer
     {
         /// <summary>Initialize the container and register it as MVC3 Dependency Resolver.</summary>
